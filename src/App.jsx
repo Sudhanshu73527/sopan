@@ -9,12 +9,15 @@ import FreeEducationPrograms from './Components/FreeEducationPrograms/FreeEducat
 import Ourgallary from './Components/ourgallary/Ourgallary'
 import Asd from './Components/Asd/Asd'
 import TherapistRoles from './Components/TherapistRoles/TherapistRoles'
+import ThematicFocus from './Components/ThematicFocus/ThematicFocus'
+import Testimonials from './Components/Testimonials/Testimonials'
 
 const App = () => {
   return (
     <div>
       <Navbar/> 
       <Herosection/>
+      <ThematicFocus/>
       <Director/>
       <Aboutus/>
       <Whatwedo/>
@@ -22,6 +25,7 @@ const App = () => {
       <Asd/>
       <TherapistRoles/>
       <Ourgallary/>
+      <Testimonials/>
       <Footer/>
     </div>
   )

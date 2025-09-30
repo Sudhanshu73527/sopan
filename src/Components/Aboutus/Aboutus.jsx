@@ -44,13 +44,13 @@ const Aboutus = () => {
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6 leading-snug drop-shadow-sm"
       >
-        Together for {" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-          Change
+        Together  {" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-200">
+         for Change
         </span>
         <br />
         Empowering Lives with {" "}
-        <span className="text-orange-500">Sopan NGO</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-200">Sopan NGO</span>
       </motion.h2>
 
       {/* Intro Paragraph */}
@@ -102,12 +102,12 @@ const Aboutus = () => {
       >
         <a
           href="#donate"
-          className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-10 py-4 rounded-full shadow-xl font-bold text-lg hover:scale-110 hover:shadow-2xl transition-all duration-300"
+          className="inline-block bg-gradient-to-r from-blue-500 to-blue-200 text-white px-10 py-4 rounded-full shadow-xl font-bold text-lg hover:scale-110 hover:shadow-2xl transition-all duration-300"
         >
-          🌟 Join Our Mission
-        </a>
-      </motion.div>
-    </section>
+           Join Our Mission 
+        </a> 
+      </motion.div>  
+    </section> 
   );
 };
 

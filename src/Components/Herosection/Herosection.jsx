@@ -2,17 +2,26 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import images
-import bgImg from "../../assets/sopan13.png";
-import bgImg2 from "../../assets/sopan12.png";
-import bgImg3 from "../../assets/sopan11.png";
+import bgImg from "../../assets/child.jpeg";
+import bgImg2 from "../../assets/child2.jpg";
+import bgImg3 from "../../assets/child1.jpg";
 
 const images = [bgImg, bgImg2, bgImg3];
+
 const prompts = [
-  "🍲 Nourishing every child with love and care.",
-  "📚 Giving hope through education and support.",
-  "🎨 Building bright futures with creativity and play.",
-  "🤝 Together, we empower underprivileged children.",
-  "🎉 Every smile counts – join our mission today !",
+  <> <span className="text-blue-500 ">Nourishing every</span> child withlove and care.</>,
+  <> Giving <span className="text-blue-500">hope through</span>  education and support.</>,
+  <> Building <span className="text-blue-500 ">bright futures</span> with creativity and play.</>,
+  <> Together, we <span className="text-green-400 font-bold">empower</span> <span className="text-yellow-300 font-bold">underprivileged children</span>.</>,
+  <> Every <span className="text-pink-300 font-bold">smile</span> counts – <span className="text-yellow-300 font-bold">join</span> our <span className="text-blue-300 font-bold">mission</span> today!</>,
+];
+
+const paragraphs = [
+  "Sopan Child NGO provides daily meals, ensuring no child goes to bed hungry and every child grows healthy and happy.",
+  "We support education by providing free schooling, books, and scholarships to help every child reach their dreams.",
+  "Through arts, sports, and creativity, we nurture hidden talents and give children confidence to express themselves.",
+  "Our programs empower families, communities, and children to build a brighter and more self-reliant future.",
+  "Join hands with us to spread smiles and create a world where every child has a chance to thrive.",
 ];
 
 const Hero = () => {
@@ -27,7 +36,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-[85vh] sm:h-[90vh] overflow-hidden">
-      {/* Animated Background Image with Parallax Effect */}
+      {/* Background Image */}
       <AnimatePresence mode="wait">
         <motion.img
           key={images[currentIndex]}
@@ -41,45 +50,49 @@ const Hero = () => {
         />
       </AnimatePresence>
 
-      {/* Floating Icons - More Playful */}
-      <motion.div
-        className="absolute top-12 left-12 text-4xl"
-        animate={{ y: [0, -8, 0] }}
-        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-      > <br />
-        👨‍👨‍👦‍👦
-      </motion.div>
-      <motion.div
-        className="absolute bottom-12 right-12 text-4xl"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-      >
-        🏏
-      </motion.div>
+      {/* Blue Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#001F3F]/70 via-[#001F3F]/60 to-[#001F3F]/80"></div>
 
       {/* Text Content */}
       <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
-        <div className="space-y-8 max-w-4xl mx-auto">
+        <div className="space-y-6 max-w-3xl mx-auto">
           {/* Animated Prompt */}
           <AnimatePresence mode="wait">
             <motion.h1
-              key={prompts[currentIndex]}
+              key={currentIndex}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg leading-snug"
             >
               {prompts[currentIndex]}
             </motion.h1>
           </AnimatePresence>
 
-          {/* Glowing CTA Button */}
+          {/* Animated Paragraph */}
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={paragraphs[currentIndex]}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto"
+            >
+              {paragraphs[currentIndex]}
+            </motion.p>
+          </AnimatePresence>
+
+          {/* CTA Button */}
           <motion.a
-            href="/contact/Help"
-            whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(255, 200, 0, 0.8)" }}
+            href="/donate"
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0 0 25px rgba(255, 220, 0, 0.9)",
+            }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-yellow-400 text-black text-lg px-8 py-3 rounded-full font-bold shadow-xl hover:bg-yellow-300 transition-all duration-300"
+            className="inline-block bg-blue-500 text-white text-lg px-8 py-3 rounded-full font-bold shadow-xl hover:bg-blue-300 transition-all duration-300"
           >
             ❤️ Support a Child
           </motion.a>

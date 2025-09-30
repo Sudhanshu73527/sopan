@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 // Import your logo
-import logo from "../../assets/sopanlogo2.png"; // <-- Replace this path with your actual logo path
+import logo from "../../assets/sopan.png"; // <-- Replace this path with your actual logo path
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -20,9 +20,9 @@ const navLinks = [
     name: "Service",
     path: "/service",
     submenu: [
-      { name: "Web Development", path: "/service/web-development" },
-      { name: "SEO & Marketing", path: "/service/seo-marketing" },
-      { name: "Graphic Design", path: "/service/graphic-design" },
+      { name: "Education Services", path: "/service/Education Services" },
+      { name: "Health & Hygiene", path: "/service/Health & Hygiene" },
+      { name: "Child Youth Programs", path: "/service/Child & Youth Programs" },
     ],
   },
   {
@@ -31,7 +31,6 @@ const navLinks = [
     submenu: [
       { name: "Events", path: "/gallary/events" },
       { name: "Projects", path: "/gallary/projects" },
-      { name: "Testimonials", path: "/gallary/testimonials" },
     ],
   },
   { name: "Contact", path: "/contact" },
@@ -46,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white sticky top-0 z-50">
+    <nav className="bg-[#28286b] text-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Logo */}
         <Link to="/">
@@ -68,8 +67,8 @@ const Navbar = () => {
               {link.submenu && (
                 <ul className="absolute left-0 top-full mt-1 bg-gray-700 w-48 rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200">
                   {link.submenu.map((sub, subIndex) => (
-                    <li key={subIndex} className="px-4 py-2 hover:bg-gray-600">
-                      <Link to={sub.path}>{sub.name}</Link>
+                    <li key={subIndex} className="px-4 py-2 hover:bg-orange-600">    
+                      <Link to={sub.path}>{sub.name}</Link>     
                     </li>
                   ))}
                 </ul>
@@ -82,7 +81,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link
             to="/donate"
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-semibold"
+            className="bg-orange-400 hover:bg-green-700 text-white px-4 py-2 rounded font-semibold"
           >
             Donate Now ❤
           </Link>
@@ -97,12 +96,12 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <ul className="md:hidden bg-gray-800 px-4 py-4 space-y-1">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <div
+          {navLinks.map((link, index) => ( 
+            <li key={index}> 
+              <div 
                 className="flex justify-between items-center py-2 cursor-pointer"
                 onClick={() => link.submenu && toggleMobileSubmenu(index)}
-              >
+              >  
                 <Link to={link.path}>{link.name}</Link>
                 {link.submenu && <FaChevronDown />}
               </div>
